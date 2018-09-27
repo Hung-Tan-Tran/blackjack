@@ -12,9 +12,9 @@
 #ifndef DECK_H
 #define DECK_H
 
-#include <stack>
+#include <deque>
 
-using std::stack;
+using std::deque;
 
 enum Suit { SPADES, HEARTS, DIAMONDS, CLUBS };
 
@@ -38,13 +38,16 @@ class Deck
         Deck& operator=(Deck && d);
 
         //Accessors
+        void displayCard(Card);
+        void getSuit() const;
+        void getValue() const;
 
         //Mutators
         void shuffle();
         
 
     private:
-        stack<Card> myDeck;
+        deque<Card> myDeck;
 };
 
 #endif
